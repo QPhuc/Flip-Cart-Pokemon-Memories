@@ -6,13 +6,19 @@
 </template>
 
 <script>
-import MainScreen from './components/MainScreen.vue'
-import InteractScreen from './components/InteractScreen.vue'
+import MainScreen from './components/MainScreen.vue';
+import InteractScreen from './components/InteractScreen.vue';
+
+import { shuffled } from "./utils/array"
 export default {
   name: 'App',
   data() {
     return {
-      statusMatch: 'default'
+      settings: {
+        totalOfBlocks: 0,
+        cardsContext: [],
+      },
+      statusMatch: 'default',
     }
   },
   components: {
@@ -20,9 +26,15 @@ export default {
     InteractScreen
   },
   methods: {
-    onHandleBeforeStart(config) {
-      console.log("running handle", config);
-      this.statusMatch = "match"
+    onHandleBeforeStart(configs) {
+      this.settings.totalOfBlocks = configs.totalOfBlocks;
+      const firstCards = Array.from( {length: this.settings.totalOfBlocks / 2}, (_, i) => i + 1 );
+      const secondCards = [...firstCards];
+      const cards = [...firstCards, ...secondCards];
+      this.settings.cardsContext = shuffled(shuffled(shuffled(shuffled(cards))))
+      console.log(this.settings.cardsContext);
+      // data ready
+      this.statusMatch = "match";
     }
   }
 }

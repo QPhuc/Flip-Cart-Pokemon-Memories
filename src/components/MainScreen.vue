@@ -27,8 +27,8 @@
     export default {
         name: 'MainScreen',
         methods: {
-            onStart(totalOfBlock) {
-                this.$emit("onStart", { totalOfBlock })
+            onStart(totalOfBlocks) {
+                this.$emit("onStart", { totalOfBlocks })
             }
         }
     }
