@@ -1,7 +1,7 @@
 <template>
   <div>
     <MainScreen v-if="statusMatch === 'default'" @onStart="onHandleBeforeStart($event)"/>
-    <InteractScreen v-if="statusMatch === 'match'"/>
+    <InteractScreen v-if="statusMatch === 'match'" :cardsContext="settings.cardsContext" />
   </div>
 </template>
 
@@ -17,6 +17,7 @@ export default {
       settings: {
         totalOfBlocks: 0,
         cardsContext: [],
+        staredAt: null,
       },
       statusMatch: 'default',
     }
@@ -31,8 +32,9 @@ export default {
       const firstCards = Array.from( {length: this.settings.totalOfBlocks / 2}, (_, i) => i + 1 );
       const secondCards = [...firstCards];
       const cards = [...firstCards, ...secondCards];
-      this.settings.cardsContext = shuffled(shuffled(shuffled(shuffled(cards))))
-      console.log(this.settings.cardsContext);
+      this.settings.cardsContext = shuffled(shuffled(shuffled(shuffled(cards))));
+      this.settings.staredAt = new Date().getTime();
+
       // data ready
       this.statusMatch = "match";
     }
