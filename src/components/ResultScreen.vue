@@ -66,4 +66,19 @@ export default {
   background-color: var(--light);
   color: var(--dark);
 }
+
+@media (max-width: 739px) {
+  .screen h1 {
+    font-size: 3rem;
+  }
+
+  .screen h3 {
+    margin: 1.5rem 0 1rem;
+    font-size: 2rem;
+  }
+
+  .screen button {
+    
+}
+}
 </style>

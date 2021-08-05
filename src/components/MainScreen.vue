@@ -15,10 +15,10 @@
         <span>8x8</span>
         <span>Hard</span>
       </button>
-      <button @click="onStart(100)">
+      <!-- <button @click="onStart(100)">
         <span>10x10</span>
         <span>Super Hard</span>
-      </button>
+      </button> -->
     </div>
   </div>
 </template>
