@@ -3,16 +3,12 @@
     class="card"
     :class="{ disabled: isDisabled }"
     :style="{
-      height: `${
-        (viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32
-      }px`,
+      height: `${(viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32}px`,
       width: `${
         (((viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32) * 3) / 4
       }px`,
       perspective: `${
-        ((((viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32) * 3) /
-          4) *
-        2
+        ((((viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32) * 3) / 4) * 2
       }px`,
     }"
   >
@@ -26,13 +22,11 @@
           class="card__content"
           :style="{
             'background-size': `${
-              (((viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32) *
-                3) /
+              (((viewHeight - 32 * 4) / Math.sqrt(cardsContext.length) - 32) * 3) /
               4 /
               3
             }px ${
-              (((viewHeight - 16 * 4) / Math.sqrt(cardsContext.length) - 16) *
-                3) /
+              (((viewHeight - 16 * 4) / Math.sqrt(cardsContext.length) - 16) * 3) /
               4 /
               3
             }px`,
@@ -159,15 +153,6 @@ export default {
 @media (max-width: 739px) {
   .card__face {
     border-radius: 8px;
-  }
-
-  .card__inner {
-  }
-
-  .card__face--front .card__content {
-  }
-
-  .card__face--back .card__content {
   }
 }
 </style>
