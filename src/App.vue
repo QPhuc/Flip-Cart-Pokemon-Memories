@@ -13,7 +13,7 @@
     :timer="timer"
     @onStartAgain="statusMatch = 'default'"
   />
-  <p class="copyright">Trần Quang Phúc</p>
+  <p class="copyright">Tran Quang Phuc</p>
 </template>
 
 <script>
